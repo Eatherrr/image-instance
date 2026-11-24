@@ -1,0 +1,17 @@
+# Notebook dan cache lokal
+.ipynb_checkpoints/
+__pycache__/
+
+# Dataset dan bobot model tidak disimpan di repository
+*.pt
+*.pth
+*.onnx
+*.engine
+.env
+.env.*
+!.env.example
+kaggle.json
+
+# Output gambar berukuran besar atau berisi foto lokal
+/results/per_model/
+/results/kandidat_5_kasus_gagal/
