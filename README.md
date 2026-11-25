@@ -142,3 +142,16 @@ Berkas pendukung:
 
 - [Rekap evaluasi sembilan model](results/rekap_evaluasi_9_model.csv)
 - [Metadata EXIF 40 foto kos](results/exif_metadata_40_foto.csv)
+
+## 8. Deklarasi penggunaan ai
+
+- Ai yg di gunakan = Gemini ai
+- Dipakai untuk : Ai saya pakai untuk membuat notebook training awal, menganalisa data, dan menjadi teman untuk brainstorming, 
+
+![Ss awal prompt](Ss-prompt-input.png)
+
+Error Out of Memory (OOM) pada Skrip Inferensi Mask R-CNN
+
+Kesalahan AI: Kode evaluasi awal yang dihasilkan AI langsung memasukkan 40 foto uji kamar kos dalam resolusi penuh kamera HP ke dalam model Mask R-CNN di Kaggle GPU tanpa batas dimensi, sehingga memicu error CUDA Out of Memory.
+
+Perbaikan yang Dilakukan: Saya memodifikasi pipeline inferensi Mask R-CNN dengan menambahkan fungsi auto-resize yang membatasi sisi terpanjang gambar maksimal 1280 piksel (sambil mempertahankan rasio aspek asli) sebelum gambar diproses oleh model.
